@@ -30,3 +30,16 @@ body {
 input {
     all: unset;
 }
+
+
+.slick-slide {
+    margin: 0 30px;
+}
+
+.slick-track {
+    height: 300px !important;
+}
+
+.slick-list, .slick-slider {
+    height: 300px !important;
+}
