@@ -1,5 +1,5 @@
 ﻿import { Video } from '@/interfaces/Video';
-import { Thumbnail } from '@/components';
+import { Thumbnail } from '@/components/Thumbnail/Thumbnail';
 
 
 type IThumbnailContainer = {
@@ -18,12 +18,12 @@ export const ThumbnailContainer = ({ video, noExtend }: IThumbnailContainer) => 
             <Thumbnail.Image extended={shouldBeExtended} imageUrl={video.thumbnail.regular.large}>
                 <Thumbnail.Bookmark active={false} />
                 <Thumbnail.Overlay />
-                <Thumbnail.AdditionalInformation relative year={video.year} type={video.category}
-                                                 icon={<Thumbnail.ThumbnailIcon
-                                                     type={video.category} />}
-                                                 rating={video.rating} />
-                <Thumbnail.Title relative title={video.title} />
             </Thumbnail.Image>
+
+            <Thumbnail.AdditionalInformation relative={shouldBeExtended} year={video.year} type={video.category}
+                                             icon={<Thumbnail.ThumbnailIcon type={video.category} />}
+                                             rating={video.rating} />
+            <Thumbnail.Title relative={shouldBeExtended} title={video.title} />
         </Thumbnail>
     );
 };

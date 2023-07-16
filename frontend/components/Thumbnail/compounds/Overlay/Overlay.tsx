@@ -1,5 +1,4 @@
-﻿'use client';
-import React from 'react';
+﻿import React from 'react';
 import styles from './overlay.module.css';
 import Image from 'next/image';
 

@@ -15,6 +15,7 @@ export const VideoImage = ({ imageUrl, extended, children }: PropsWithChildren<I
         <div id={'thumbnail-image-container'}
              className={`relative overflow-hidden ${imageResponsive} rounded-3xl w-full`}>
             {imageUrl && <Image
+                alt={'video image'}
                 fill
                 quality={100}
                 src={imageUrl}

@@ -1,14 +1,16 @@
 ﻿import React from 'react';
 import Image from 'next/image';
-import { ThumbnailIconMapper } from '@/constants/VideoCategory';
+import { ThumbnailIconMapper, VideoCategory } from '@/constants/VideoCategory';
 
 type IThumbnailIconProps = {
-    type: string
+    type: typeof VideoCategory.MOVIE | typeof VideoCategory.TV_SERIES;
 }
 
 export const ThumbnailIcon = ({ type }: IThumbnailIconProps) => {
 
 
-    return <Image id={'thumbnail-movie-tv-icon'} src={ThumbnailIconMapper[type]} alt={'movie'} height={12}
+    const src = ThumbnailIconMapper[type];
+
+    return <Image id={'thumbnail-movie-tv-icon'} src={src} alt={'movie'} height={12}
                   width={12} />;
 };
