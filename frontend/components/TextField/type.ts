@@ -1,6 +1,6 @@
 ﻿import { Dispatch, SetStateAction } from 'react';
 
-export interface ITextField {
+export interface ITextFieldProps {
     value: string;
     onValueChange: Dispatch<SetStateAction<string>>;
     placeholder?: string;

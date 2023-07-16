@@ -1,22 +1,33 @@
-'use client';
-import { PageContainer, SearchField, TextField } from '@/components';
-import { useState } from 'react';
+import { PageContainer, Thumbnail } from '@/components';
+import { Video } from '@/interfaces/Video';
+import { getVideos } from '@/lib/services/getVideos';
 
-export default function Home() {
-    const [value, setValue] = useState('');
+export default async function Home() {
+    const videos: Video[] = await getVideos();
 
+    console.log(videos);
     return (
-        <PageContainer className={'p-4'}>
-            <SearchField value={value} onValueChange={setValue} name={'searc_fied'}
-                         placeholder={'Search For movies or TV series'} />
+        <PageContainer className={'p-4 '}>
 
-            <div className={'h-8'}></div>
-            <TextField value={value} onValueChange={setValue} name={'searc_fied'}
-                       placeholder={'Email address'} type={'password'} isInvalid={value.length < 5}
-                       errorMessage={'Cant be empty'} />
+            <div className='flex flex-wrap gap-4'>
+                {
+                    videos.map(video => (
+                        <Thumbnail>
+
+                            <Thumbnail.Image imageUrl={video.thumbnail.regular.large}>
+                                <Thumbnail.Bookmark active={false} />
+                                <Thumbnail.Overlay />
+                            </Thumbnail.Image>
 
 
-            <div></div>
+                            <Thumbnail.AdditionalInformation year={video.year} type={video.category}
+                                                             icon={<Thumbnail.ThumbnailIcon type={video.category} />}
+                                                             rating={video.rating} />
+                            <Thumbnail.Title title={video.title} />
+                        </Thumbnail>
+                    ))
+                }
+            </div>
         </PageContainer>
     );
 }

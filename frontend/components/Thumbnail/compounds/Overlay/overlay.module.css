@@ -1,0 +1,28 @@
+﻿
+.overlay {
+
+}
+
+.play {
+}
+
+.play img {
+    height: 30px;
+    width: 30px;
+    margin-left: 5px
+}
+
+.play * {
+    display: inline-block;
+}
+
+.overlay > * {
+    display: none;
+}
+
+
+.overlay:hover .play {
+    display: inline-flex;
+    align-items: center;
+}
+

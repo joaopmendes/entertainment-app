@@ -1,19 +1,19 @@
 ﻿'use client';
 
 import { FocusEventHandler } from 'react';
-import { ITextField } from '@/components/TextField/type';
+import { ITextFieldProps } from '@/components/TextField/type';
 import { useInternalValue } from '@/hooks';
 
 
-export const TextField: React.FC<ITextField> = ({
-                                                    onValueChange,
-                                                    value,
-                                                    placeholder,
-                                                    name,
-                                                    type,
-                                                    isInvalid,
-                                                    errorMessage,
-                                                }: ITextField) => {
+export const TextField: React.FC<ITextFieldProps> = ({
+                                                         onValueChange,
+                                                         value,
+                                                         placeholder,
+                                                         name,
+                                                         type,
+                                                         isInvalid,
+                                                         errorMessage,
+                                                     }: ITextFieldProps) => {
     const [internalValue, setInternalValue] = useInternalValue<string>(value);
 
     const onBlur: FocusEventHandler<HTMLInputElement> = e => {
@@ -26,7 +26,7 @@ export const TextField: React.FC<ITextField> = ({
         <div className={'flex h-9 relative transition-all'}>
             <input name={name}
                    className={
-                       `ml-4 pl-4 pb-2 caret-red text-body-s min-w-[230px] w-full
+                       `ml-4 pl-4 pb-2 caret-red text-body-s min-w-56 w-full
                        border-0 border-b-[1px] border-solid border-greyish-blue focus:border-white
                        ${inputNoValueStyle} ${inputInvalidStyle}`
                    }

@@ -22,12 +22,12 @@ export const SearchField: React.FC<ISearchFieldProps> = ({
     return (
         <div className={'flex'}>
             <Image src={'/icons/icon-search.svg'} alt={'Search Icon'}
-                   className={'h:[24px] w:[24px] tablet:h-[32px] tablet:w-[32px] '}
+                   className={'h:6 w:6 tablet:h-8 tablet:w-8 '}
                    width={32}
                    height={32} />
             <input name={name}
                    className={
-                       `ml-4 caret-red cursor text-body min-w-[230px] w-full pb-2 
+                       `ml-4 caret-red cursor text-body min-w-56 w-full pb-2 
                        tablet:text-heading-m 
                        border-0 border-b-[1px] border-b-transparent border-solid focus:border-greyish-blue 
                        ${inputNoValueStyle}`
