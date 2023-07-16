@@ -1,32 +1,33 @@
-import { PageContainer, Thumbnail } from '@/components';
+import { PageContainer, ThumbnailContainer } from '@/components';
 import { Video } from '@/interfaces/Video';
 import { getVideos } from '@/lib/services/getVideos';
 
 export default async function Home() {
     const videos: Video[] = await getVideos();
 
-    console.log(videos);
     return (
-        <PageContainer className={'p-4 '}>
+        <PageContainer className={'p-4'}>
 
-            <div className='flex flex-wrap gap-4'>
+            <div className='flex gap-4'>
+                {
+                    videos.filter(video => video.isTrending).map(video => (
+                        <ThumbnailContainer video={video} noExtend={false} />
+                    ))
+
+                }
+
+            </div>
+
+
+            <div className='flex flex-wrap gap-4 mt-12'>
                 {
                     videos.map(video => (
-                        <Thumbnail>
+                        <ThumbnailContainer video={video} noExtend={true} />
 
-                            <Thumbnail.Image imageUrl={video.thumbnail.regular.large}>
-                                <Thumbnail.Bookmark active={false} />
-                                <Thumbnail.Overlay />
-                            </Thumbnail.Image>
-
-
-                            <Thumbnail.AdditionalInformation year={video.year} type={video.category}
-                                                             icon={<Thumbnail.ThumbnailIcon type={video.category} />}
-                                                             rating={video.rating} />
-                            <Thumbnail.Title title={video.title} />
-                        </Thumbnail>
                     ))
+
                 }
+
             </div>
         </PageContainer>
     );

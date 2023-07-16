@@ -2,6 +2,7 @@
 import { PageContainer } from '@/components/PageContainer/PageContainer';
 import { TextField } from '@/components/TextField/TextField';
 import { Thumbnail } from '@/components/Thumbnail/Thumbnail.tsx';
+import { ThumbnailContainer } from '@/components/Thumbnail/ThumbnailContainer.tsx';
 
 
 export {
@@ -9,4 +10,5 @@ export {
     PageContainer,
     TextField,
     Thumbnail,
+    ThumbnailContainer,
 };
