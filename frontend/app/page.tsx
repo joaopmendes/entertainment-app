@@ -6,7 +6,7 @@ import { SearchBar } from '@/components/SearchBar/SearchBar';
 import { FeaturedCarousel } from '@/components/FeaturedCarousel/FeaturedCarousel';
 
 type PageProps = {
-    searchParams?: { search: string }
+    searchParams: { search: string }
 }
 
 export default async function Home({ searchParams: { search } }: PageProps) {

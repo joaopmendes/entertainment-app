@@ -1,2 +1,1 @@
-﻿
-export type IBookmarkProps = { active: boolean }
+﻿export type IBookmarkProps = { active: boolean, onClick: () => void }
