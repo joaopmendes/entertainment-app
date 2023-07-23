@@ -1,5 +1,7 @@
-﻿import { Video } from '@/interfaces/Video';
+﻿'use client';
+import { Video } from '@/interfaces/Video';
 import { Thumbnail } from '@/components/Thumbnail/Thumbnail';
+import { useBookmarks } from '@/hooks';
 
 
 type IThumbnailContainer = {
@@ -8,15 +10,19 @@ type IThumbnailContainer = {
 }
 
 export const ThumbnailContainer = ({ video, noExtend }: IThumbnailContainer) => {
-
-
+    const { toggleBookmark, bookmarks } = useBookmarks();
     const shouldBeExtended = !noExtend && video.isTrending;
+
 
     return (
         <Thumbnail extended={shouldBeExtended}>
 
             <Thumbnail.Image extended={shouldBeExtended} imageUrl={video.thumbnail.regular.large}>
-                <Thumbnail.Bookmark active={false} />
+                <Thumbnail.Bookmark
+                    active={bookmarks?.find(bookmark => bookmark.title.toLowerCase() == video.title.toLowerCase())?.isBookmarked ?? false}
+                    onClick={() => {
+                        toggleBookmark(video.title);
+                    }} />
                 <Thumbnail.Overlay />
             </Thumbnail.Image>
 

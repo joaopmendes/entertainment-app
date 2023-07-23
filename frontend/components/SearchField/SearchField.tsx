@@ -27,7 +27,7 @@ export const SearchField: React.FC<ISearchFieldProps> = ({
                    height={32} />
             <input name={name}
                    className={
-                       `ml-4 caret-red cursor text-body min-w-56 w-full pb-2 
+                       `ml-4 caret-red cursor text-body min-w-56 w-full pb-2 outline-0
                        tablet:text-heading-m 
                        border-0 border-b-[1px] border-b-transparent border-solid focus:border-greyish-blue 
                        ${inputNoValueStyle}`
