@@ -20,7 +20,7 @@ export const Navbar: React.FC<React.PropsWithChildren> = (props) => {
 
                         {
                             NavbarLinks.map(link => (
-                                <Link href={link.path}>
+                                <Link href={link.path} key={link.path}>
                                     <Image width={20} height={20} src={path == link.path ? link.imgActive : link.img}
                                            alt={link.alt} />
                                 </Link>

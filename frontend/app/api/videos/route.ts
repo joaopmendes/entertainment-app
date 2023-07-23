@@ -3,12 +3,15 @@ import data from '@/data/data.json';
 
 export async function GET(req: NextRequest) {
 
-    var search = req.nextUrl.searchParams.get('search');
+    const search = req.nextUrl.searchParams.get('search');
+    const category = req.nextUrl.searchParams.get('category');
+    let tempData = [...data];
 
-    var tempData = [...data];
-
-    if (search && search.length) {
+    if (search) {
         tempData = tempData.filter(video => video.title.toLowerCase().includes(search.toLowerCase()));
+    }
+    if (category) {
+        tempData = tempData.filter(video => video.category == category);
     }
 
     return NextResponse.json(tempData);

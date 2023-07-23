@@ -2,8 +2,13 @@
 
 export const runtime = 'edge';
 
-export const getVideos = async (search: string): Promise<Video[]> => {
-    const response = await fetch(`${process.env.URL}/api/videos?search=${search}`, {
+export const getVideos = async (search: string, category = ''): Promise<Video[]> => {
+
+    const params = new URLSearchParams();
+    params.append('search', search);
+    params.append('category', category);
+
+    const response = await fetch(`${process.env.URL}/api/videos?` + params.toString(), {
         method: 'GET',
         cache: 'no-store',
     });

@@ -12,7 +12,7 @@ export const SearchBar = ({ initialValue, placeholder }: ISearchBarProps) => {
 
     const onChange = (newValue: string) => {
 
-        router.push('/?search=' + newValue);
+        router.push('?search=' + newValue);
     };
     return (
         <div className={'w-full'}>
