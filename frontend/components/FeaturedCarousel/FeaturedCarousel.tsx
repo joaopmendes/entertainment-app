@@ -19,6 +19,15 @@ export const FeaturedCarousel = ({ videos }: IFeaturedCarouseProps) => {
         slidesToScroll: 1,
         responsive: [
             {
+                breakpoint: 1700,
+                settings: {
+                    slidesToShow: 5,
+                    slidesToScroll: 2,
+                    infinite: true,
+                    dots: false,
+                },
+            },
+            {
                 breakpoint: 1300,
                 settings: {
                     slidesToShow: 2,
@@ -47,7 +56,7 @@ export const FeaturedCarousel = ({ videos }: IFeaturedCarouseProps) => {
     return (
         <Carousel {...settings} className={'w-full h-40'}>
             {videos.filter(video => video.isTrending).map(video => (
-                <div key={video.title} className={'my-4'}>
+                <div key={video.title}>
                     <ThumbnailContainer key={video.title} video={video} noExtend={false} />
                 </div>
             ))}

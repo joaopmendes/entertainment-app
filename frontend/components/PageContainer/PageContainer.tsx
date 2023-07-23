@@ -8,7 +8,7 @@ export const PageContainer: React.FC<PropsWithChildren<IPageContainerProps>> = (
                                                                                 }) => {
 
     return (
-        <div className={`${className} ${styles.pageContainer}`}>
+        <div className={`${styles.pageContainer} ${className}`}>
             {children}
         </div>
     );

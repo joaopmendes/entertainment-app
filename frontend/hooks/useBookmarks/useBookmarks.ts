@@ -20,11 +20,8 @@ export const useBookmarks = () => {
 
         setBookmarks(newBookmarks);
     };
-    const checkBookmark = (bookmarkTitle: string) => {
-        return bookmarks.find(bookmark => bookmark.title.toLowerCase() == bookmarkTitle.toLowerCase())?.isBookmarked || false;
-    };
     return {
         toggleBookmark,
-        checkBookmark,
+        bookmarks,
     };
 };
