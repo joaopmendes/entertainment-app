@@ -19,13 +19,13 @@ export default async function Home({ searchParams: { search } }: PageProps) {
 
             {!search?.length && (
                 <>
-                    <h1 className={'text-heading-l text-white my-2'}>Trending</h1>
+                    <h1 className={'text-heading-l text-white my-8 '}>Trending</h1>
                     <FeaturedCarousel videos={videos} />
                 </>
             )}
 
 
-            <h2 className={'text-heading-l text-white mt-6'}>
+            <h2 className={'text-heading-l text-white mt-0'}>
                 {search?.length ? `Found ${videos.length} for '${search}'` : `Recommended for you`}
             </h2>
 

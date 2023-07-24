@@ -4,10 +4,11 @@ import { useRouter } from 'next/navigation';
 
 type ISearchBarProps = {
     initialValue: string;
-    placeholder?: string
+    placeholder?: string;
+    className?: string
 }
 
-export const SearchBar = ({ initialValue, placeholder }: ISearchBarProps) => {
+export const SearchBar = ({ initialValue, placeholder, className }: ISearchBarProps) => {
     const router = useRouter();
 
     const onChange = (newValue: string) => {
@@ -15,7 +16,7 @@ export const SearchBar = ({ initialValue, placeholder }: ISearchBarProps) => {
         router.push('?search=' + newValue);
     };
     return (
-        <div className={'w-full'}>
+        <div className={'w-full' + className}>
 
             <SearchField value={initialValue} onValueChange={onChange} name={'search'}
                          placeholder={placeholder ?? ''} />

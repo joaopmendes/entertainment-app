@@ -13,7 +13,7 @@ export const VideoImage = ({ imageUrl, extended, children }: PropsWithChildren<I
         : `h-28 tablet:h-36  desktop:h-44 min-h-[110px] tablet:min-h-[140px]  desktop:min-h-[174px]`;
     return (
         <div id={'thumbnail-image-container'}
-             className={`relative overflow-hidden ${imageResponsive} rounded-3xl w-full`}>
+             className={`relative overflow-hidden ${imageResponsive} rounded-[8px] w-full`}>
             {imageUrl && <Image
                 alt={'video image'}
                 fill

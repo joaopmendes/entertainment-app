@@ -13,45 +13,37 @@ export const FeaturedCarousel = ({ videos }: IFeaturedCarouseProps) => {
         dots: false,
         arrows: false,
         infinite: true,
-        speed: 500,
+        speed: 1,
         centerMode: true,
-        slidesToShow: 3,
+        slidesToShow: 4,
         slidesToScroll: 1,
         responsive: [
             {
-                breakpoint: 1700,
+                breakpoint: 2400,
                 settings: {
-                    slidesToShow: 5,
-                    slidesToScroll: 2,
-                    infinite: true,
-                    dots: false,
+                    slidesToShow: 4,
+                },
+            },
+            {
+                breakpoint: 1800,
+                settings: {
+                    slidesToShow: 3,
                 },
             },
             {
                 breakpoint: 1300,
                 settings: {
                     slidesToShow: 2,
-                    slidesToScroll: 1,
-                    infinite: true,
-                    dots: true,
                 },
             },
             {
-                breakpoint: 700,
+                breakpoint: 1115,
                 settings: {
                     slidesToShow: 2,
-                    slidesToScroll: 1,
-                    initialSlide: 1,
-                },
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
                 },
             },
         ],
+
     };
     return (
         <Carousel {...settings} className={'w-full h-40'}>
