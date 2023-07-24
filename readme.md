@@ -1,13 +1,12 @@
 ## Table of contents
 
 - [Overview](#overview)
-  - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
-  - [Links](#links)
+    - [The challenge](#the-challenge)
+    - [Screenshot](#screenshot)
+    - [Links](#links)
 - [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-
+    - [Built with](#built-with)
+    - [What I learned](#what-i-learned)
 
 ## Overview
 
@@ -23,17 +22,18 @@ Users should be able to:
 
 ### Screenshot
 
-
 #### Desktop View
+
 ![](./screenshot_desktop.png)
 
 #### Mobile View
+
 ![](./screenshot_mobile.png)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Add solution URL here](https://entertainment-et6a0okih-joaopmendes.vercel.app/)
+- Live Site URL: [Add live site URL here](https://github.com/joaopmendes/entertainment-app)
 
 ## My process
 
@@ -48,5 +48,6 @@ Users should be able to:
 - [Tailwindcss](https://tailwindcss.com/) - TailwindCSS
 
 ### What i learned
+
 I definitely improved upon next.js and css, which was the intent of this project. 
 
