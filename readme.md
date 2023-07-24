@@ -32,8 +32,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://entertainment-et6a0okih-joaopmendes.vercel.app/)
-- Live Site URL: [Add live site URL here](https://github.com/joaopmendes/entertainment-app)
+- Solution URL: [Github Repo](https://entertainment-et6a0okih-joaopmendes.vercel.app/)
+- Live Site URL: [Live website](https://github.com/joaopmendes/entertainment-app)
 
 ## My process
 
