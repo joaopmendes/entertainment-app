@@ -1,23 +1,42 @@
-'use client';
-import { PageContainer, SearchField, TextField } from '@/components';
-import { useState } from 'react';
+import React from 'react';
+import { Video } from '@/interfaces/Video';
+import { getVideos } from '@/lib/services/getVideos';
+import { ThumbnailContainer } from '@/components/Thumbnail/ThumbnailContainer';
+import { SearchBar } from '@/components/SearchBar/SearchBar';
+import { FeaturedCarousel } from '@/components/FeaturedCarousel/FeaturedCarousel';
 
-export default function Home() {
-    const [value, setValue] = useState('');
+type PageProps = {
+    searchParams: { search: string }
+}
+
+export default async function Home({ searchParams: { search } }: PageProps) {
+    const videos: Video[] = await getVideos(false, search ?? '');
 
     return (
-        <PageContainer className={'p-4'}>
-            <SearchField value={value} onValueChange={setValue} name={'searc_fied'}
-                         placeholder={'Search For movies or TV series'} />
+        <React.Fragment>
 
-            <div className={'h-8'}></div>
-            <TextField value={value} onValueChange={setValue} name={'searc_fied'}
-                       placeholder={'Email address'} type={'password'} isInvalid={value.length < 5}
-                       errorMessage={'Cant be empty'} />
+            <SearchBar placeholder={'Search for movies or TV Series'} initialValue={search ?? ''} />
+
+            {!search?.length && (
+                <>
+                    <h1 className={'text-heading-l text-white my-2'}>Trending</h1>
+                    <FeaturedCarousel videos={videos} />
+                </>
+            )}
 
 
-            <div></div>
-        </PageContainer>
+            <h2 className={'text-heading-l text-white mt-6'}>
+                {search?.length ? `Found ${videos.length} for '${search}'` : `Recommended for you`}
+            </h2>
+
+            <div className='flex flex-wrap gap-4 mt-8'>
+                {
+                    videos.map(video => (
+                        <ThumbnailContainer key={video.title} video={video} noExtend={true} />
+                    ))
+                }
+            </div>
+        </React.Fragment>
     );
 }
 

@@ -1,3 +1,3 @@
-﻿export interface IContainerProps {
+﻿export interface IPageContainerProps {
     className?: string;
 }

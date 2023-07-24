@@ -23,10 +23,65 @@
     box-sizing: border-box;
 }
 
+html {
+    overflow-x: hidden;
+}
+
 body {
     font-family: "Outfit", "Arial", "Courier New", serif;
 }
 
 input {
     all: unset;
+}
+
+.svg-normal {
+    color: #5A698F;
+}
+
+.svg-active {
+    color: #FFF
+}
+
+
+.slick-slide {
+    margin: 0 30px;
+}
+
+
+.slick-track {
+    height: 300px !important;
+}
+
+.slick-list, .slick-slider {
+    height: 300px !important;
+}
+
+@media (max-width: 470px) {
+    .slick-slide {
+        margin: 0 15px
+    }
+
+    .slick-track {
+        height: 150px !important;
+    }
+
+    .slick-list, .slick-slider {
+        height: 150px !important;
+    }
+}
+
+
+@media (max-width: 756px) {
+    .slick-slide {
+        margin: 0
+    }
+
+    .slick-track {
+        height: 150px !important;
+    }
+
+    .slick-list, .slick-slider {
+        height: 150px !important;
+    }
 }

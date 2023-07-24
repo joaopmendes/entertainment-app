@@ -1,5 +1,5 @@
 ﻿
 .pageContainer {
-    width: min(95%, 1440px);
+    width: min(80%, 1440px);
     margin-inline: auto
 }

@@ -2,7 +2,7 @@
 import { IUseIntervalValue } from './types';
 
 export const useInternalValue = <T>(value: T): IUseIntervalValue<T> => {
-    const [internalValue, setInternalValue] = useState<T>();
+    const [internalValue, setInternalValue] = useState<T>(value);
 
     useEffect(() => {
         if (value !== internalValue) {
