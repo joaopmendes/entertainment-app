@@ -33,7 +33,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Github Repo](https://github.com/joaopmendes/entertainment-app)
-- Live Site URL: [Live website](https://entertainment-et6a0okih-joaopmendes.vercel.app/)
+- Live Site URL: [Live website](https://entertainment-app-sigma.vercel.app/)
 
 ## My process
 
