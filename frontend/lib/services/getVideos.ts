@@ -2,13 +2,11 @@
 
 export const runtime = 'edge';
 
-const useHttp = () => {
-    return process.env.USE_HTTP == 'true' || process.env.NEXT_PUBLIC_USE_HTTP == 'true';
-};
 
 const getProtocol = () => {
 
-    return useHttp() ? 'http://' : 'https://';
+    const isHttp = process.env.USE_HTTP == 'true' || process.env.NEXT_PUBLIC_USE_HTTP == 'true';
+    return isHttp ? 'http://' : 'https://';
 };
 
 const getWebsiteUrl = (endpoint: string) => {
