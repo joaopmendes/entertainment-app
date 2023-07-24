@@ -16,7 +16,7 @@ export default function Bookmarks({ searchParams: { search } }: PageProps) {
     const { bookmarks } = useBookmarks();
 
     const fetchVideos = async () => {
-        const fetchedVideos: Video[] = await getVideos(true, search ?? '');
+        const fetchedVideos: Video[] = await getVideos(search ?? '');
         setVideos(fetchedVideos);
     };
 

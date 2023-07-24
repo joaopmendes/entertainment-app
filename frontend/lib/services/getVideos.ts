@@ -2,13 +2,32 @@
 
 export const runtime = 'edge';
 
-export const getVideos = async (isClientSide: boolean, search: string, category = ''): Promise<Video[]> => {
+const useHttp = () => {
+    return process.env.USE_HTTP == 'true' || process.env.NEXT_PUBLIC_USE_HTTP == 'true';
+};
+
+const getProtocol = () => {
+
+    return useHttp() ? 'http://' : 'https://';
+};
+
+const getWebsiteUrl = (endpoint: string) => {
+    const url = process.env.VERCEL_URL || process.env.NEXT_PUBLIC_VERCEL_URL;
+
+    if (!url) throw new Error('No URL defined');
+
+    return `${getProtocol()}${url}${endpoint}`;
+
+};
+
+export const getVideos = async (search: string, category = ''): Promise<Video[]> => {
 
     const params = new URLSearchParams();
     params.append('search', search);
     params.append('category', category);
 
-    const response = await fetch(`${isClientSide ? process.env.NEXT_PUBLIC_VERCEL_URL : process.env.VERCEL_URL}/api/videos?` + params.toString(), {
+
+    const response = await fetch(getWebsiteUrl('/api/videos?' + params.toString()), {
         method: 'GET',
         cache: 'no-store',
     });

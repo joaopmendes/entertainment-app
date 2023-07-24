@@ -10,7 +10,7 @@ type PageProps = {
 }
 
 export default async function Movies({ searchParams: { search } }: PageProps) {
-    const videos: Video[] = await getVideos(false, search ?? '', VideoCategory.MOVIE);
+    const videos: Video[] = await getVideos(search ?? '', VideoCategory.MOVIE);
 
     return (
         <React.Fragment>
