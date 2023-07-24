@@ -8,7 +8,7 @@ export const getVideos = async (isClientSide: boolean, search: string, category 
     params.append('search', search);
     params.append('category', category);
 
-    const response = await fetch(`/api/videos?` + params.toString(), {
+    const response = await fetch(`${isClientSide ? process.env.NEXT_PUBLIC_VERCEL_URL : process.env.VERCEL_URL}/api/videos?` + params.toString(), {
         method: 'GET',
         cache: 'no-store',
     });
