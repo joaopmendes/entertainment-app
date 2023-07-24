@@ -10,12 +10,12 @@ type PageProps = {
 }
 
 export default async function Movies({ searchParams: { search } }: PageProps) {
-    const videos: Video[] = await getVideos(search ?? '', VideoCategory.MOVIE);
+    const videos: Video[] = await getVideos(false, search ?? '', VideoCategory.MOVIE);
 
     return (
         <React.Fragment>
 
-            <SearchBar placeholder={'Search for movies or TV Series'} initialValue={search ?? ''} />
+            <SearchBar placeholder={'Search for movies'} initialValue={search ?? ''} />
 
 
             <h2 className={'text-heading-l text-white mt-6'}>

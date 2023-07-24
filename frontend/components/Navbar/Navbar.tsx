@@ -34,7 +34,7 @@ export const Navbar: React.FC<React.PropsWithChildren> = (props) => {
                     </div>
                 </div>
             </header>
-            <div className={'mx-8 desktop:ml-40 desktop:mt-10'}>
+            <div className={'mx-8 mt-12 desktop:ml-40 desktop:mt-10'}>
                 <main className={'w-full h-full'}>
                     {props.children}
                 </main>

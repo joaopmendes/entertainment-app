@@ -10,16 +10,16 @@ type PageProps = {
 }
 
 export default async function TvSeries({ searchParams: { search } }: PageProps) {
-    const videos: Video[] = await getVideos(search ?? '', VideoCategory.TV_SERIES);
+    const videos: Video[] = await getVideos(false, search ?? '', VideoCategory.TV_SERIES);
 
     return (
         <React.Fragment>
 
-            <SearchBar placeholder={'Search for movies or TV Series'} initialValue={search ?? ''} />
+            <SearchBar placeholder={'Search for TV Series'} initialValue={search ?? ''} />
 
 
             <h2 className={'text-heading-l text-white mt-6'}>
-                {search?.length ? `Found ${videos.length} for '${search}'` : `Movies`}
+                {search?.length ? `Found ${videos.length} for '${search}'` : `TV Series`}
             </h2>
 
             <div className='flex flex-wrap gap-4 mt-8'>

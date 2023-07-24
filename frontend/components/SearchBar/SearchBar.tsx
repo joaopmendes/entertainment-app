@@ -11,7 +11,7 @@ export const SearchBar = ({ initialValue, placeholder }: ISearchBarProps) => {
     const router = useRouter();
 
     const onChange = (newValue: string) => {
-
+        debugger;
         router.push('?search=' + newValue);
     };
     return (
